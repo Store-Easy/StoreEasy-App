@@ -8,7 +8,7 @@
 
 `npm install -g expo-cli`
 
-1. `git clone https://github.com/Store-Easy/SE-D3.git`
+1. `git clone https://github.com/storeeasy/StoreEasy-Native.git`
 2. `cd StoreEasy-Native`
 3. `npm install`
 4. `expo start` or `npm start`
