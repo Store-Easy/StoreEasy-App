@@ -10,13 +10,14 @@ const RenteeSearch = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.regform}>
+      <View style={styles.form}>
         <Text style={styles.header}>Search Storage</Text>
         <Picker
           style={styles.picker}
           selectedValue={propertyType}
           onValueChange={(itemValue) => setPropertyType(itemValue)}
         >
+          <Picker.Item label="Property Type" value="type" />
           <Picker.Item label="Room" value="room" />
           <Picker.Item label="Garage" value="garage" />
         </Picker>
@@ -25,6 +26,7 @@ const RenteeSearch = () => {
           selectedValue={location}
           onValueChange={(itemValue) => setLocation(itemValue)}
         >
+          <Picker.Item label="Location" value="location" />
           <Picker.Item label="Chandigarh" value="chandigarh" />
           <Picker.Item label="Mohali" value="mohali" />
         </Picker>
@@ -33,8 +35,9 @@ const RenteeSearch = () => {
           selectedValue={pricePerMonth}
           onValueChange={(itemValue) => setPricePerMonth(itemValue)}
         >
-          <Picker.Item label="20000" value="20000" />
-          <Picker.Item label="30000" value="30000" />
+          <Picker.Item label="Price" value="price" />
+          <Picker.Item label="2000" value="2000" />
+          <Picker.Item label="3000" value="3000" />
         </Picker>
 
         <TouchableOpacity style={styles.button}>

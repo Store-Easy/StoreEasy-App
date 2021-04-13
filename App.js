@@ -7,6 +7,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 import HostForm from "./App/HostForm/HostForm";
 import RenteeSearch from "./App/RenteeSearch/RenteeSearch";
+import UserType from "./App/UserType/UserType";
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -16,7 +17,7 @@ const SearchStack = () => {
     <Stack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: "#42eff5",
+          backgroundColor: "#36485f",
         },
         headerTintColor: "#fff",
         headerTitleStyle: {
@@ -30,6 +31,7 @@ const SearchStack = () => {
         component={HostForm}
       />
       <Stack.Screen name="Search Rentee" component={RenteeSearch} />
+      <Stack.Screen name="UserType" component={UserType} />
     </Stack.Navigator>
   );
 };
@@ -45,23 +47,23 @@ const Tabs = () => {
         name="Feed"
         component={HostForm}
         options={{
-          tabBarLabel: "Search",
+          tabBarLabel: "Register",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home-plus" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={RenteeSearch}
+        options={{
+          tabBarLabel: "New Rentals",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="home-search"
               color={color}
               size={26}
             />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Notifications"
-        component={RenteeSearch}
-        options={{
-          tabBarLabel: "New Rentals",
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home-plus" color={color} size={26} />
           ),
         }}
       />
@@ -72,7 +74,7 @@ const Tabs = () => {
 export default function App() {
   return (
     <NavigationContainer>
-      <Tabs />
+      <SearchStack />
     </NavigationContainer>
   );
 }

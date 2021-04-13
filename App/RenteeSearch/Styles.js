@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     paddingLeft: 50,
     paddingRight: 50,
   },
-  regform: {
+  form: {
     alignSelf: "stretch",
   },
   header: {
