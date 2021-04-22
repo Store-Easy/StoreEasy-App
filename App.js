@@ -8,6 +8,8 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import HostForm from "./App/HostForm/HostForm";
 import RenteeSearch from "./App/RenteeSearch/RenteeSearch";
 import UserType from "./App/UserType/UserType";
+import SearchList from "./App/SearchList/SearchList";
+import PropertyCard from "./App/PropertyCard/PropertyCard";
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -25,6 +27,11 @@ const SearchStack = () => {
         },
       }}
     >
+      <Stack.Screen
+        name="Search List"
+        options={{ title: "Search List" }}
+        component={SearchList}
+      />
       <Stack.Screen
         name="Storage Registeration"
         options={{ title: "Storage Registeration" }}
@@ -67,6 +74,26 @@ const Tabs = () => {
           ),
         }}
       />
+      <Tab.Screen
+        name="Search List"
+        component={SearchList}
+        options={{
+          tabBarLabel: "Search List",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home-plus" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Property Card"
+        component={PropertyCard}
+        options={{
+          tabBarLabel: "Property Card",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home-plus" color={color} size={26} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
@@ -74,7 +101,8 @@ const Tabs = () => {
 export default function App() {
   return (
     <NavigationContainer>
-      <SearchStack />
+      {/* <SearchStack /> */}
+      <Tabs />
     </NavigationContainer>
   );
 }
