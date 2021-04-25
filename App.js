@@ -23,22 +23,35 @@ const SearchStack = () => {
         },
         headerTintColor: "#fff",
         headerTitleStyle: {
-          fontWeight: "bold",
+          fontWeight: "900",
         },
       }}
     >
       <Stack.Screen
-        name="Search List"
+        name="UserType"
+        options={{ title: "Welcome to StoreEasy" }}
+        component={UserType}
+      />
+      <Stack.Screen
+        name="StorageRegisteration"
+        options={{ title: "Storage Registeration" }}
+        component={HostForm}
+      />
+      <Stack.Screen
+        name="SearchRentee"
+        options={{ title: "Search Storage" }}
+        component={RenteeSearch}
+      />
+      <Stack.Screen
+        name="SearchList"
         options={{ title: "Search List" }}
         component={SearchList}
       />
       <Stack.Screen
-        name="Storage Registeration"
-        options={{ title: "Storage Registeration" }}
-        component={HostForm}
+        name="PropertyCard"
+        options={{ title: "Property Card" }}
+        component={PropertyCard}
       />
-      <Stack.Screen name="Search Rentee" component={RenteeSearch} />
-      <Stack.Screen name="UserType" component={UserType} />
     </Stack.Navigator>
   );
 };
@@ -101,8 +114,8 @@ const Tabs = () => {
 export default function App() {
   return (
     <NavigationContainer>
-      {/* <SearchStack /> */}
-      <Tabs />
+      <SearchStack />
+      {/* <Tabs /> */}
     </NavigationContainer>
   );
 }

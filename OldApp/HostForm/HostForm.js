@@ -1,33 +1,12 @@
 import React, { useState } from "react";
 import { TextInput, Text, View, Button, TouchableOpacity } from "react-native";
 import { styles } from "./Styles";
-import { arr } from "../../Backend-Data-API";
 
-const HostForm = ({ navigation }) => {
+const HostForm = () => {
   const [name, setName] = useState("");
   const [propertyType, setPropertyType] = useState("");
   const [location, setLocation] = useState("");
   const [pricePerMonth, setPricePerMonth] = useState("");
-  const [phone, setPhoneNumber] = useState("");
-
-  const handleHost = () => {
-    if (name && propertyType && location && pricePerMonth && phone) {
-      arr.push({
-        Owner: name,
-        PropertyType: propertyType,
-        Location: location,
-        Price: pricePerMonth,
-        Phone: phone,
-        id: 101,
-      });
-      alert(
-        `Your property is successfully uploaded.\nInterested rentees will contact you on your number`
-      );
-      navigation.push("UserType");
-    } else {
-      alert(`Please enter all the details`);
-    }
-  };
 
   const handleChange = (event) => {
     switch (event.name) {
@@ -86,18 +65,10 @@ const HostForm = ({ navigation }) => {
             underlineColorAndroid={"transparent"}
             onChangeText={(input) => setPricePerMonth(input)}
           />
-          <TextInput
-            style={styles.textinput}
-            placeholder="PhoneNumber"
-            name="PhoneNumber"
-            defaultValue={phone}
-            placeholderTextColor="white"
-            underlineColorAndroid={"transparent"}
-            onChangeText={(input) => setPhoneNumber(input)}
-          />
-          <TouchableOpacity style={styles.button} onPress={handleHost}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.btntext}>Register</Text>
           </TouchableOpacity>
+          {/* <Button title="Learn More" color="#841584" /> */}
         </View>
       </View>
     </View>
