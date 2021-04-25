@@ -6,8 +6,8 @@
 
 #### Prerequites:
 
-1. `git clone https://github.com/storeeasy/SE-D4.git`
-2. `cd SE-D4`
+1. `git clone https://github.com/storeeasy/StoreEasy-App.git`
+2. `cd StoreEasy-App`
 3. `npm install`
 4. `npm start`
 5.  Press **a** or **i** in terminal to start the application in android or ios emulator respectively
