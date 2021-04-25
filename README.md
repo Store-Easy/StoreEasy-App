@@ -1,6 +1,6 @@
 # StoreEasy - React Native Application
 
-##### A React Native application under development
+##### A React Native application
 
 # Setting up environment
 
